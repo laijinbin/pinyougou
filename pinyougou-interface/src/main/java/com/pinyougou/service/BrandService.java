@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface BrandService {
     List<Brand> findAll();
+
+    void save(Brand brand);
+
+    void update(Brand brand);
 }

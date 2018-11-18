@@ -28,6 +28,10 @@
         <!--设置mapper的自动扫描包-->
         <property name="basePackage" value="com.pinyougou.mapper"></property>
     </bean>
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 设置数据访问接口类 -->
+        <property name="basePackage" value="com.pinyougou.mapper"/>
+    </bean>
 
     <!--配置事务-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
