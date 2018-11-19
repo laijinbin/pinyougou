@@ -8,7 +8,6 @@ import tk.mybatis.mapper.common.Mapper;
 import java.util.List;
 
 public interface BrandMapper extends Mapper<Brand> {
-    @Select("select * from tb_brand order by id asc")
-    List<Brand> findAll();
+    List<Brand> findAll(Brand brand);
 
 }
