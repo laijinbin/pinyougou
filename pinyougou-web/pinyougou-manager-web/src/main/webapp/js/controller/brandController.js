@@ -40,6 +40,7 @@ app.controller("brandController", function ($scope,$controller, baseService) {
             baseService.delete("/brand/delete", $scope.ids)
                 .then(function (value) {
                     if (value.data) {
+                        $scope.ids = [];
                         alert("删除成功");
                         $scope.reload();
                     } else {

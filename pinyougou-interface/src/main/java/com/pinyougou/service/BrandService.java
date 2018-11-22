@@ -5,6 +5,7 @@ import com.pinyougou.pojo.Brand;
 
 
 import java.util.List;
+import java.util.Map;
 
 public interface BrandService {
 //    List<Brand> findAll();
@@ -16,4 +17,8 @@ public interface BrandService {
     PageResult<Brand> findByPage(Brand brand, Integer page, Integer rows);
 
     void delete(Long[] ids);
+
+
+
+    List<Map<String,Object>> findIdAndName();
 }

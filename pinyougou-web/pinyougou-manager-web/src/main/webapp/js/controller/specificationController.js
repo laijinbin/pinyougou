@@ -1,6 +1,7 @@
 app.controller("specificationController", function ($scope,$controller, baseService) {
     $controller('baseController',{$scope:$scope});
     $scope.searchEntity = {};
+
     $scope.search = function (page, rows) {
         baseService.findByPage("/specification/findByPage", page, rows, $scope.searchEntity)
             .then(function (value) {
@@ -40,11 +41,12 @@ app.controller("specificationController", function ($scope,$controller, baseServ
         baseService.delete("/specification/delete",$scope.ids)
             .then(function (value) {
                     if (value.data){
+                        $scope.ids = [];
                         alert("删除成功");
                         $scope.reload();
                     }else {
                         alert("删除失败，再来一次");
                     }
             });
-    }
+    };
 });

@@ -15,7 +15,7 @@ app.controller('baseController',function($scope){
             $scope.paginationConf.itemsPerPage);
     };
 
-    $scope.updateSelection= function ($event, id) {
+    $scope.updateSelection= function ($event,id) {
         if ($event.target.checked) {
             $scope.ids.push(id);
         } else {

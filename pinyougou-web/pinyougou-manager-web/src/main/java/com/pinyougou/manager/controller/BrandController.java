@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.alibaba.dubbo.config.annotation.Reference;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/brand")
@@ -16,11 +17,11 @@ public class BrandController {
     @Reference(timeout = 10000)
     private BrandService brandService;
 
-//    @GetMapping("/findAll")
-//    public List<Brand> findAll() {
-//        List<Brand> list = brandService.findAll();
-//        return list;
-//    }
+    @GetMapping("/findIdAndName")
+    public List<Map<String,Object>> findIdAndName() {
+        List<Map<String,Object>> list = brandService.findIdAndName();
+        return list;
+    }
 
     @PostMapping("/save")
     public boolean save(@RequestBody Brand brand){

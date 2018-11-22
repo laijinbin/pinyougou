@@ -16,6 +16,8 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+
 @Service(interfaceName = "com.pinyougou.service.SpecificationService")
 @Transactional
 public class SpecificationServiceImpl implements SpecificationService{
@@ -26,8 +28,8 @@ public class SpecificationServiceImpl implements SpecificationService{
     @Autowired
     private SpecificationOptionMapper specificationOptionMapper;
 //    @Override
-//    public List<Specification> findAll(Specification specification) {
-//        return specificationMapper.findAll(specification);
+//    public List<Specification> findAll() {
+//        return specificationMapper.selectAll();
 //    }
 
     @Override
@@ -83,5 +85,10 @@ public class SpecificationServiceImpl implements SpecificationService{
             e.printStackTrace();
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public List<Map<String, Object>> findIdAndName() {
+        return specificationMapper.findIdAndName();
     }
 }

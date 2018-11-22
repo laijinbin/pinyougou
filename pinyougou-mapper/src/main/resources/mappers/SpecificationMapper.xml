@@ -11,4 +11,7 @@
         </where>
         order by id asc
     </select>
+    <select id="findIdAndName" resultType="java.util.Map">
+        SELECT id,spec_name as text from tb_specification
+    </select>
 </mapper>

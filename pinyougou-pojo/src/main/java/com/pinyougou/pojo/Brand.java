@@ -2,6 +2,8 @@ package com.pinyougou.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashMap;
+
 
 @Table(name = "tb_brand")
 public class Brand implements Serializable{
@@ -12,6 +14,7 @@ public class Brand implements Serializable{
     private String name;
     @Column(name="first_char")
     private String firstChar;
+
 
     @Override
     public String toString() {

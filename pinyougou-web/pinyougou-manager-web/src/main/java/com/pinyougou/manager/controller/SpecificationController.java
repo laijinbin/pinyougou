@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/specification")
@@ -16,10 +17,10 @@ public class SpecificationController {
 
     @Reference(timeout = 10000)
     private SpecificationService specificationService;
-//    @GetMapping("/findAll")
-//    public List<Specification> findAll(){
-//        return specificationService.findAll();
-//    }
+    @GetMapping("/findIdAndName")
+    public List<Map<String,Object>> findIdAndName(){
+        return specificationService.findIdAndName();
+    }
 
     @GetMapping("/findByPage")
     public PageResult<Specification> findByPage(Specification specification,Integer page,Integer rows){

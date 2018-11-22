@@ -13,4 +13,12 @@
     <!-- 覆盖父工程中的port属性 -->
     <port>9001</port>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.5</version>
+    </dependency>
+
+  </dependencies>
 </project>

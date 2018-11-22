@@ -20,6 +20,7 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 @Service(interfaceName = "com.pinyougou.service.BrandService")
 @Transactional
@@ -30,7 +31,6 @@ public class BrandServiceImpl implements BrandService{
 
 //    @Override
 //    public List<Brand> findAll() {
-//
 //        return brandMapper.selectAll();
 //    }
 
@@ -67,5 +67,10 @@ public class BrandServiceImpl implements BrandService{
         Example.Criteria criteria=example.createCriteria();
         criteria.andIn("id", Arrays.asList(ids));
         brandMapper.deleteByExample(example);
+    }
+
+    @Override
+    public List<Map<String,Object>> findIdAndName() {
+        return brandMapper.findIdAndName();
     }
 }
