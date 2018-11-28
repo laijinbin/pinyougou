@@ -12,4 +12,6 @@ public interface BrandMapper extends Mapper<Brand> {
     List<Brand> findAll(Brand brand);
 
     List<Map<String,Object>> findIdAndName();
+
+    List<Brand> findBrandList(Long id);
 }

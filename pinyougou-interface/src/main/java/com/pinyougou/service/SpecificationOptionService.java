@@ -6,5 +6,9 @@ import java.util.List;
 
 public interface SpecificationOptionService {
     List<SpecificationOption> findById(Long id);
+
+    List<SpecificationOption> findspecificationItemsOption(Long[] specId);
+
+
 //    List<SpecificationOption> findAll();
 }

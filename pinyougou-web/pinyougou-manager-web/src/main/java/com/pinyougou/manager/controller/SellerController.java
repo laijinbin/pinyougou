@@ -3,20 +3,18 @@ package com.pinyougou.manager.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.pinyougou.common.pojo.PageResult;
 import com.pinyougou.pojo.Seller;
-import com.pinyougou.service.SellerCheckService;
+import com.pinyougou.service.SellerService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tk.mybatis.mapper.entity.Example;
 
 @RestController
-@RequestMapping("/sellerCheck")
-public class SellerCheckController {
+@RequestMapping("/seller")
+public class SellerController {
 
     @Reference(timeout = 10000)
-    private SellerCheckService sellerCheckService;
+    private SellerService sellerService;
     @GetMapping("/findByPage")
     public PageResult<Seller> findByPage(Integer page,Integer rows,Seller seller){
         try {
@@ -31,13 +29,13 @@ public class SellerCheckController {
         }catch (Exception e){
             e.printStackTrace();
         }
-        return sellerCheckService.findByPage(page,rows,seller);
+        return sellerService.findByPage(page,rows,seller);
 
     }
     @GetMapping("/updateStatus")
     public boolean updateStatus(String sellerId,String status) {
         try {
-            sellerCheckService.updateStatus(sellerId, status);
+            sellerService.updateStatus(sellerId, status);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

@@ -2,7 +2,7 @@ app.controller("sellerCheckController", function ($scope,$controller, baseServic
     $controller('baseController', {$scope: $scope});
 
     $scope.search=function (page,rows) {
-        baseService.findByPage("/sellerCheck/findByPage",page,rows,$scope.searchEntity)
+        baseService.findByPage("/seller/findByPage",page,rows,$scope.searchEntity)
             .then(function (value) {
                 $scope.sellecCheckList=value.data.list;
                 $scope.paginationConf.totalItems = value.data.total;
@@ -12,7 +12,7 @@ app.controller("sellerCheckController", function ($scope,$controller, baseServic
         $scope.entity = JSON.parse(JSON.stringify(entity));
     };
     $scope.updateStatus=function (sellerId,status) {
-        baseService.sendGet("/sellerCheck/updateStatus?sellerId="+sellerId+"&status="+status)
+        baseService.sendGet("/seller/updateStatus?sellerId="+sellerId+"&status="+status)
             .then(function (value) {
                 if (value.data){
                     alert("操作成功");

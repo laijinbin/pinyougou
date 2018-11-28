@@ -64,4 +64,9 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
     public List<Map<String, Object>> findTypeTemplateList() {
         return typeTemplateMapper.findTypeTemplateList();
     }
+
+    @Override
+    public TypeTemplate findBrandList(Long id) {
+        return typeTemplateMapper.selectByPrimaryKey(id);
+    }
 }

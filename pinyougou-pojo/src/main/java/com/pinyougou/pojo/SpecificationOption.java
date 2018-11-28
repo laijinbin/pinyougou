@@ -2,6 +2,7 @@ package com.pinyougou.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Table(name = "tb_specification_option")
 public class SpecificationOption implements Serializable{
@@ -56,4 +57,6 @@ public class SpecificationOption implements Serializable{
         this.specId = specId;
         this.orders = orders;
     }
+
+
 }

@@ -73,4 +73,6 @@ public class BrandServiceImpl implements BrandService{
     public List<Map<String,Object>> findIdAndName() {
         return brandMapper.findIdAndName();
     }
+
+
 }

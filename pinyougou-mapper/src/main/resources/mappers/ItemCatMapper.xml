@@ -4,6 +4,7 @@
     <select id="findItemCatByParentId" resultType="com.pinyougou.pojo.ItemCat">
         select * from tb_item_cat where parent_id=#{parentId};
     </select>
+
     <select id="findIdByParentId" resultType="java.lang.Long">
         SELECT id from tb_item_cat where parent_id=#{id}
     </select>
