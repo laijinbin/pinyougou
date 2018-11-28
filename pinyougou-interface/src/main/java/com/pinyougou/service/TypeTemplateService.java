@@ -1,5 +1,6 @@
 package com.pinyougou.service;
 
+import com.github.pagehelper.PageInfo;
 import com.pinyougou.common.pojo.PageResult;
 import com.pinyougou.pojo.TypeTemplate;
 
@@ -16,6 +17,4 @@ public interface TypeTemplateService {
     void delete(Long[] ids);
 
     List<Map<String,Object>> findTypeTemplateList();
-
-    TypeTemplate findBrandList(Long id);
 }
